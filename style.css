@@ -1,4 +1,71 @@
-.centered-text {
-  text-align: center;
-  font-size: 2em;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
+
+.centered-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.centered-text {
+  font-size: 5em;
+    /* Размер текста */
+    font-weight: bold;
+    /* Можно сделать жирным */
+  text-align: center;
+  position: relative;
+    z-index: 1;
+  
+    /* Градиент, который будет «заливкой» текста */
+    background: linear-gradient(270deg,
+        #ff0066,
+        #ffcc00,
+        #33ccff,
+        #9933ff);
+    background-size: 800% 800%;
+  
+    /* «Выключаем» обычный цвет текста и используем градиент 
+                   как «текстуру» */
+    color: transparent;
+    /* для Firefox */
+    -webkit-text-fill-color: transparent;
+    /* для Chrome/Safari */
+    -webkit-background-clip: text;
+    /* для Chrome/Safari */
+    background-clip: text;
+    /* для Firefox (считается экспериментальным) */
+  
+    /* Анимация плавного переливания градиента */
+    animation: animateGradient 4s ease infinite;
+  }
+  
+  /* Ключевые кадры анимации градиента */
+  @keyframes animateGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+
+                                                                                                                                100% {
+                                                                                                                                  background-position: 0% 50%;
+                                                                                                                                }
+                                                                                                                                }
